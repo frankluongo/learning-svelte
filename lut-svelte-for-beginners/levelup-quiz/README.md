@@ -46,4 +46,17 @@ This is crazy easy
 
 ## CSS Basics
 
-this is next
+- CSS in Svelte is scoped by default
+- It is scoped to the component and doesn't have a parent/child relationship
+
+How to do global CSS
+
+```css
+:global(selector) {
+  color: green;
+}
+```
+
+## Hitting an API
+
+## Await

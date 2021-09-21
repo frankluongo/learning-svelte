@@ -1,7 +1,12 @@
 <script>
+  import getQuiz from './lib/getQuiz';
+
   const answers = ['a', 'b', 'c', 'd'];
   let result;
   let correct = 'b';
+  let quiz = getQuiz();
+
+  const refreshQuiz = () => (quiz = getQuiz());
 
   function pickAnswer(answer) {
     if (correct === answer) return (result = 'Correct!');
@@ -17,6 +22,16 @@
       <h3>Pick an Answer</h3>
     {/if}
   </header>
+  <section class="quiz-refresh">
+    <button on:click={refreshQuiz}>Refresh Quiz</button>
+  </section>
+  <section class="question">
+    {#await quiz}
+      <h3>Getting Quiz Info</h3>
+    {:then data}
+      <h3>{data.results[0].question}</h3>
+    {/await}
+  </section>
   <section class="buttons">
     {#each answers as answer}
       <button on:click={pickAnswer.bind(null, answer)}>
