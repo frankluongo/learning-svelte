@@ -3,7 +3,7 @@
 </script>
 
 <main>
-  <Quiz name="Quiz Quiz" />
+  <Quiz />
 </main>
 
 <style>
