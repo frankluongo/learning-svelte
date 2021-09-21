@@ -1,5 +1,5 @@
 <script>
-  import getQuiz from './lib/getQuiz';
+  import getQuiz from '../lib/getQuiz';
 
   const answers = ['a', 'b', 'c', 'd'];
   let result;
