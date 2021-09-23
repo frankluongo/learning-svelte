@@ -11,9 +11,17 @@ export default async function getQuiz() {
     const processedData = {
       ...data,
       results: data?.results.map((item) => {
+        const allAnswers = [
+          ...item.incorrect_answers.map((answer) => ({
+            answer,
+            correct: false,
+          })),
+          { answer: item.correct_answer, correct: true },
+        ];
+
         return {
           ...item,
-          answers: shuffle([item.correct_answer, ...item.incorrect_answers]),
+          answers: shuffle(allAnswers),
         };
       }),
     };

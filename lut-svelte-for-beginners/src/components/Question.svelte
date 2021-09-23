@@ -1,16 +1,25 @@
 <script>
+  export let nextQuestion;
   export let question;
+  export let setScore;
+  export let index;
+  export let length;
+
   let answered = false;
+  let selectedAnswer;
   let correct;
+
+  let hasNext = index + 1 < length;
 
   function pickAnswer(answer) {
     answered = true;
-    if (answer === question.correct_answer) return (correct = true);
-    correct = false;
+    selectedAnswer = answer.answer;
+    correct = answer.correct;
+    setScore(answer.correct);
   }
 </script>
 
-<section>
+<section class="container" data-correct={correct}>
   <header>
     <h3>{@html question.question}</h3>
     {#if correct && answered}<h4>Nailed it!</h4>{/if}
@@ -20,13 +29,19 @@
     {#each question.answers as answer}
       <button
         on:click={pickAnswer.bind(null, answer)}
-        aria-disabled={answered}
         disabled={answered}
+        aria-disabled={answered}
+        data-selected={answer.answer === selectedAnswer}
       >
-        {@html answer}
+        {@html answer.answer}
       </button>
     {/each}
   </section>
+  {#if answered && hasNext}
+    <section>
+      <button on:click={nextQuestion}>Next Question</button>
+    </section>
+  {/if}
 </section>
 
 <style>
@@ -56,5 +71,22 @@
   button:focus,
   button:hover {
     background-color: #fff;
+  }
+
+  button[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .container[data-correct='false'] button[data-selected='true'] {
+    color: white;
+
+    background-color: rgb(197, 59, 5);
+  }
+
+  .container[data-correct='true'] button[data-selected='true'] {
+    color: white;
+
+    background-color: rgb(5, 197, 92);
   }
 </style>

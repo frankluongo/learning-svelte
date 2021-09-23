@@ -60,3 +60,18 @@ How to do global CSS
 ## Hitting an API
 
 ## Await
+
+## Our Questions
+
+## A Working Quiz
+
+## Interface Improvements
+
+## Animated Transitions
+
+```svelte
+  import { fade } from 'svelte/transition';
+  <div in:fade={{ delay: 200 }} out:fade={{ duration: 200 }}></div>
+```
+
+## Reactive Expressions
