@@ -8,6 +8,8 @@ This repo contains *all* of the tutorials I've taken relating to Svelte. Use it 
 
 ## Helpful Links
 
-[Svelte Documentation](1)
+- [Svelte Documentation](1)
+- [Svelte Kit](2)
 
 [1]: https://svelte.dev/docs
+[2]: https://kit.svelte.dev/
