@@ -9,4 +9,4 @@ This repo contains *all* of the tutorials I've taken relating to Svelte. Use it 
 [Svelte Documentation](1)
 
 ---
-[1](https://svelte.dev/docs)
+[1]: https://svelte.dev/docs
