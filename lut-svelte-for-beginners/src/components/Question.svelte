@@ -32,6 +32,7 @@
         disabled={answered}
         aria-disabled={answered}
         data-selected={answer.answer === selectedAnswer}
+        class:correct
       >
         {@html answer.answer}
       </button>

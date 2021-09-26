@@ -2,8 +2,10 @@
   import { fade } from 'svelte/transition';
   import getQuiz from '../lib/getQuiz';
   import Question from './Question.svelte';
+  import Modal from './Modal.svelte';
+  import { score } from '../lib/store';
   let quiz = getQuiz();
-  let score = 0;
+  let isModalOpen = false;
   let currentQuestion = 0;
 
   const nextQuestion = () => {
@@ -11,18 +13,27 @@
   };
   const refreshQuiz = () => {
     quiz = getQuiz();
-    score = 0;
+    score.update(0);
+    isModalOpen = false;
   };
 
   function setScore(correct) {
-    if (correct) score = score + 1;
+    if (correct) score.update((val) => val + 1);
   }
+
+  // Reactive Statement
+  $: if ($score > 0) {
+    isModalOpen = true;
+  }
+
+  $: questionNumber = currentQuestion + 1;
 </script>
 
 <section>
   <header>
     <h2>Art Quiz</h2>
-    <p>Score: {score}/{quiz?.results?.length || 10}</p>
+    <h3>Score: {$score}/{quiz?.results?.length || 10}</h3>
+    <h3>Question #{questionNumber}</h3>
     <section class="quiz-refresh">
       <button on:click={refreshQuiz}>Refresh Quiz</button>
     </section>
@@ -47,3 +58,13 @@
     {/await}
   </section>
 </section>
+
+{#if isModalOpen}
+  <Modal on:close={refreshQuiz}>
+    <svelte:fragment slot="header">Congrats!</svelte:fragment>
+    <svelte:fragment slot="content">
+      <p>You won!</p>
+      <button on:click={refreshQuiz}>Start Over</button>
+    </svelte:fragment>
+  </Modal>
+{/if}
