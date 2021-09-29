@@ -1,0 +1,20 @@
+{
+  "name": "learning-svelte",
+  "version": "1.0.0",
+  "description": "## Summary",
+  "main": "index.js",
+  "scripts": {
+    "build-sveltekit": "cd lut-sveltekit && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankluongo/learning-svelte.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankluongo/learning-svelte/issues"
+  },
+  "homepage": "https://github.com/frankluongo/learning-svelte#readme"
+}
