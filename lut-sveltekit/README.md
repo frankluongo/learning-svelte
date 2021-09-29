@@ -1,4 +1,62 @@
-# create-svelte
+# Level Up Tutorials Svelte Kit Course
+
+This project contains notes pertaining to the "Svelte Kit" Course on Level Up Tutorials
+
+## Lessons
+
+### What is Svelte Kit
+
+### Getting Started
+
+### Exploring The Svelte Kit Demo
+
+### Starting From a Skeleton
+
+### Pages, Routing and Layouts in Svelte Kit
+
+### The $lib Directory
+
+### CSS In Svelte Kit - PostCSS, SCSS & Scoping
+
+### Tailwinds With PostCSS
+
+### API Routes
+
+### Nested Layouts
+
+### Layout Reset
+
+`__layout.reset.svelte` will create a fully blank Layout
+
+### Parameter Based File Names
+
+### Loading Data Before Initial Render
+
+### Markdown with MDSVEX
+
+### Dynamic Imports and Frontmatter
+
+### Frontmatter with MDSVEX
+
+### Glob Imports
+
+### Loading in Depth
+
+This lesson is next
+
+### Error Pages
+
+### Prefetch and Other Anchor Options
+
+### Static Site Generation Adapters
+
+### Hosting on Render
+
+### Building For Node
+
+### TypeScript in Svelte Kit
+
+## Initial Instructions
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
 
