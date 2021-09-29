@@ -16,5 +16,21 @@
   "bugs": {
     "url": "https://github.com/frankluongo/learning-svelte/issues"
   },
-  "homepage": "https://github.com/frankluongo/learning-svelte#readme"
+  "homepage": "https://github.com/frankluongo/learning-svelte#readme",
+  "devDependencies": {
+		"@sveltejs/adapter-node": "^1.0.0-next.51",
+		"@sveltejs/adapter-static": "^1.0.0-next.20",
+		"@sveltejs/kit": "next",
+		"autoprefixer": "^10.3.6",
+		"eslint": "^7.32.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^3.2.1",
+		"mdsvex": "^0.9.8",
+		"prettier": "^2.4.1",
+		"prettier-plugin-svelte": "^2.4.0",
+		"sass": "^1.42.1",
+		"svelte": "^3.43.0",
+		"svelte-preprocess": "^4.9.5",
+		"tailwindcss": "^2.2.16"
+	}
 }
